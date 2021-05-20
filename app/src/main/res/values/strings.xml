@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">stockApp</string>
+    <string name="background_picture">background picture</string>
+    <string name="bought_stocks">Bought Stocks</string>
+    <string name="my_stocks">My Stocks</string>
+    <string name="history">History</string>
+    <string name="add_button">Add button</string>
+    <string name="total">Total</string>
+    <string name="sold_stocks">Sold Stocks</string>
+    <string name="stocks_price">Stocks Price</string>
+    <string name="stocks_amount">Stocks Amount</string>
+    <string name="stock_name">Stock Name</string>
+    <string name="cancel">CANCEL</string>
+    <string name="add">ADD</string>
+    <string name="black_image">black image</string>
+    <string name="bought_for">Bought For</string>
+    <string name="sold_for">Sold For</string>
+    <string name="amount_sold">Amount sold</string>
+    <string name="price_sold">Price sold</string>
+    <string name="sell">Sell</string>
+</resources>

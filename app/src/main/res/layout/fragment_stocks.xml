@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/idText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:visibility="gone"/>
+
+    <view
+        android:id="@+id/recyclerView"
+        class="androidx.recyclerview.widget.RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp">
+
+    </view>
+
+    <include layout="@layout/total_card"
+        android:layout_height="70dp"
+        android:layout_width="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/add_overlay"
+        android:contentDescription="@string/black_image" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/add_button"
+        app:backgroundTint="@color/purple_200"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/formRect"
+            android:layout_width="360dp"
+            android:layout_height="380dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:srcCompat="@drawable/rectangle_with_border"
+            android:contentDescription="@string/black_image" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:layout_margin="30dp"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/formRect"
+            app:layout_constraintStart_toStartOf="@+id/formRect"
+            app:layout_constraintTop_toTopOf="@+id/formRect"
+            app:startIconTint="@color/white"
+            app:startIconDrawable="@drawable/ic_stock_name">
+
+            <AutoCompleteTextView
+                android:id="@+id/formAutoComplete"
+                android:hint="@string/stock_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputAmount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@color/black"
+            android:hint="@string/stocks_amount"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/formRect"
+            app:layout_constraintStart_toStartOf="@+id/formRect"
+            app:layout_constraintTop_toBottomOf="@+id/textInputName"
+            app:startIconTint="@color/white"
+            app:startIconDrawable="@drawable/ic_stock">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number|text"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputPrice"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@color/black"
+            android:hint="@string/stocks_price"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/formRect"
+            app:layout_constraintStart_toStartOf="@+id/formRect"
+            app:layout_constraintTop_toBottomOf="@+id/textInputAmount"
+            app:startIconTint="@color/white"
+            app:startIconDrawable="@drawable/ic_money_sign">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|numberDecimal"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_custom_color2"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            app:backgroundTint="@null"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputPrice" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_custom_color"
+            android:text="@string/add"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputPrice" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/form2"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/formRect2"
+            android:layout_width="360dp"
+            android:layout_height="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
+            app:srcCompat="@drawable/rectangle_with_border"
+            android:contentDescription="@string/black_image" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputAmount2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@color/black"
+            android:hint="@string/amount_sold"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/formRect2"
+            app:layout_constraintStart_toStartOf="@+id/formRect2"
+            app:layout_constraintTop_toTopOf="@+id/formRect2"
+            app:startIconDrawable="@drawable/ic_stock"
+            app:startIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number|text"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputPrice2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@color/black"
+            android:hint="@string/price_sold"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/formRect2"
+            app:layout_constraintStart_toStartOf="@+id/formRect2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputAmount2"
+            app:startIconTint="@color/white"
+            app:startIconDrawable="@drawable/ic_money_sign">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|numberDecimal"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/cancel_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_custom_color2"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            app:backgroundTint="@null"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/textInputPrice2" />
+
+        <Button
+            android:id="@+id/addButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_custom_color"
+            android:text="@string/sell"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/textInputPrice2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

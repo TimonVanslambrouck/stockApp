@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/myStocksButton"
+        android:icon="@drawable/ic_heart"
+        android:title="@string/my_stocks"/>
+
+    <item
+        android:id="@+id/historyButton"
+        android:icon="@drawable/ic_money"
+        android:title="@string/history"/>
+</menu>
